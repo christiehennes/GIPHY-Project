@@ -39,8 +39,36 @@ function displayGifs(search){
         method: "GET"
     }).then(function(response){
 
-        console.log("Inside response");
-        console.log(response);
+        //console.log("Inside response");
+        //console.log(response);
+
+        let results = response.data;
+
+        results.forEach(function(item){
+            //console.log(item);
+
+            //Create an object for the gif 
+            let gif = {
+                stillUrl: '',
+                movingUrl: '',
+                rating: ''
+            };
+
+            gif.stillUrl = item.images.fixed_height_still.url;
+            gif.movingUrl = item.images.fixed_height.url;
+            gif.rating = item.rating;
+            //console.log("image: " + gif.stillUrl );
+
+            //Create a div to display the gif in 
+            let gifDiv = 
+            `<div class="gif">
+                <img src="${gif.stillUrl}">
+                <p>Rating: ${gif.rating}</p>
+            </div>`;
+
+            $("#images-display").append(gifDiv);
+
+        });
 
     });
 
@@ -53,10 +81,16 @@ $(document).on("click", ".button", function(){
     let search = $(this).attr("data-name");
     console.log("Button name: " + search);
     displayGifs(search);
-})
+});
 
 
 // Click handler: click on giph --> play it or pause it (add a data flag of some kind..?)
+$(document).on("click", ".gif", function(){
+   
+    console.log("Clicked button: " + $(this));
+   
+});
+
 
 
 //Start the game 
