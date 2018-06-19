@@ -69,6 +69,20 @@ function displayGifs(search){
 }
 
 // Function: Create button --> add to array and call the display buttons function
+$("input[type='submit']").on("click", function(event){
+
+    //
+    event.preventDefault();
+
+    let input = $("input[type='text']").val();
+    $("input[type='text']").val("");
+
+    citiesList.push(input);
+    displayButtons();
+
+    //console.log(input);
+
+});
 
 // Click handler: click on button --> pull from API and display all the giphs
 $(document).on("click", ".button", function(){
