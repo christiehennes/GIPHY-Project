@@ -47,23 +47,17 @@ function displayGifs(search){
         results.forEach(function(item){
             //console.log(item);
 
-            //Create an object for the gif 
-            let gif = {
-                stillUrl: '',
-                movingUrl: '',
-                rating: ''
-            };
-
-            gif.stillUrl = item.images.fixed_height_still.url;
-            gif.movingUrl = item.images.fixed_height.url;
-            gif.rating = item.rating;
+            //Create variables
+            let stillUrl = item.images.fixed_height_still.url;
+            let movingUrl = item.images.fixed_height.url;
+            let rating = item.rating;
             //console.log("image: " + gif.stillUrl );
 
             //Create a div to display the gif in 
             let gifDiv = 
             `<div class="gif">
-                <img src="${gif.stillUrl}">
-                <p>Rating: ${gif.rating}</p>
+                <img src="${stillUrl}" id="gif-image" data-still="${stillUrl}" data-moving="${movingUrl}" data-motion="0">
+                <p>Rating: ${rating}</p>
             </div>`;
 
             $("#images-display").append(gifDiv);
@@ -85,9 +79,21 @@ $(document).on("click", ".button", function(){
 
 
 // Click handler: click on giph --> play it or pause it (add a data flag of some kind..?)
-$(document).on("click", ".gif", function(){
-   
-    console.log("Clicked button: " + $(this));
+$(document).on("click", "#gif-image", function(){
+
+    //Check to see if the image is currently moving from a data flag set
+    let isMoving = parseInt($(this).attr("data-motion"));
+
+    //Change the url depending if it's moving or not 
+    if (isMoving){
+        $(this).attr("src", $(this).attr("data-still") );
+        $(this).attr("data-motion", "0");
+    }
+    else{
+        $(this).attr("src", $(this).attr("data-moving") );
+        $(this).attr("data-motion", "1");
+    }
+
    
 });
 
