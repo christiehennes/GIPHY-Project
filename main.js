@@ -27,6 +27,8 @@ function displayButtons(){
 
 function displayGifs(search){
 
+    $('#images-display').empty();
+
     //Define variables for API call
     let apiKey = 'zsklsDJa6xWAE1ExbSiP3h2pRhDwxw7p';
     let queryUrl = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${search}&limit=10`;
