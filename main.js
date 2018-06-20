@@ -79,8 +79,10 @@ $("input[type='submit']").on("click", function(event){
     let input = $("input[type='text']").val();
     $("input[type='text']").val("");
 
-    citiesList.push(input);
-    displayButtons();
+    if(input){
+        citiesList.push(input);
+        displayButtons();
+    }
 
     //console.log(input);
 
