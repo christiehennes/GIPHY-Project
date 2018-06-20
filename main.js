@@ -58,7 +58,7 @@ function displayGifs(search){
             //Create a div to display the gif in 
             let gifDiv = 
             `<div class="gif">
-                <img src="${stillUrl}" id="gif-image" data-still="${stillUrl}" data-moving="${movingUrl}" data-motion="0">
+                <img src="${stillUrl}" class="gif-image" id="gif-image" data-still="${stillUrl}" data-moving="${movingUrl}" data-motion="0">
                 <p>Rating: ${rating}</p>
             </div>`;
 
