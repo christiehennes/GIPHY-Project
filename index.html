@@ -6,14 +6,24 @@
     <title>GIPHY</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+
     
 </head>
 <body class="body">
 
     <div class="header-wrapper">
-        <div class="header-item" id="buttons-list"></div>
+        <div class="header-item">
+            <div class="text">Display by City</div>
+            <br>
+            <div id="buttons-list"></div>
+            <div class="show-more" id="show-more"></div>
+        </div>
         <div class="header-item">
             <form>
+                <div class="text">Add City</div>
+                <br>
                 <input type="text" name="search" id="search-value">
                 <input type ="submit" value="Submit" id="submit-button" clss="button">
             </form>
