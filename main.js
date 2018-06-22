@@ -1,7 +1,7 @@
 
 //VARIABLES
 
-let citiesList = ["san diego", "new york", "los angeles", "chicago", "paris", "milan", "tokyo", "rome"];
+let citiesList = ["san diego", "new york", "los angeles", "chicago", "paris", "usa", "tokyo", "rome", "canada"];
 let localOffset = 0; //Create an offset to add more gifs on page 
 let currentSearch = ''; //To update with current search term
 
