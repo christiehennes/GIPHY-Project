@@ -1,10 +1,11 @@
 
-//Variable Declaration
+//VARIABLES
 
 let citiesList = ["san diego", "new york", "los angeles", "chicago", "paris", "milan", "tokyo", "rome"];
 let localOffset = 0; //Create an offset to add more gifs on page 
 let currentSearch = ''; //To update with current search term
 
+//FUNCTIONS
 
 // Dynamically display buttons on the page 
 function displayButtons(){
@@ -74,16 +75,8 @@ function displayGifs(search, offset){
 
 }
 
-//Click handler to show more gifs on the page 
-$(document).on('click', '.show-more', function(){
 
-
-    localOffset++;
-
-    displayGifs(currentSearch, localOffset);
-
-});
-
+//CLICK HANDLERS
 
 // Click handler for the submit button to grab the contents of the input field, add to the list of cities, and display new buttons
 $("input[type='submit']").on("click", function(event){
@@ -132,6 +125,15 @@ $(document).on("click", "#gif-image", function(){
     }
 
    
+});
+
+//Click handler to show more gifs on the page 
+$(document).on('click', '.show-more', function(){
+
+    localOffset++; //Increase the offset to pull more gifs 
+
+    displayGifs(currentSearch, localOffset);
+
 });
 
 
