@@ -1,5 +1,7 @@
 # GIPHY Project 
 
+[Project Link](https://christiehennes.github.io/GIPHY-Project/)
+
 ## Instructions
  
  * Click on the predefined buttons to render 10 gifs
